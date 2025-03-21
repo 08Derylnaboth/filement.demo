@@ -2,7 +2,7 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Latest Products
+          Our Parking Spaces
         </h2>
       </div>
       <div class="row">
@@ -10,7 +10,7 @@
         @foreach($product as $products)
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="box">
-            <a href="">
+           
               <div class="img-box">
                 <img src="{{$products->image}}" alt="">
               </div>
@@ -26,12 +26,12 @@
                 </h6>
               </div>
               
-            </a>
+           <div style="padding:10px"><a class ="btn btn-danger" href="{{url('product_details',$products->id)}}">Details</a>
           </div>
 
           @endforeach
         </div>
-
+</div>
 
 
 

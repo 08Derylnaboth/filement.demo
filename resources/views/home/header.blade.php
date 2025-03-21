@@ -2,7 +2,7 @@
       <nav class="navbar navbar-expand-lg custom_nav-container ">
         <a class="navbar-brand" href="index.html">
           <span>
-            Giftos
+            BLISS PARKING
           </span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,7 +16,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="shop.html">
-                Shop
+                Park
               </a>
             </li>
             <li class="nav-item">
@@ -34,12 +34,34 @@
             </li>
           </ul>
           <div class="user_option">
-            <a href="">
+          @if (Route::has('login'))
+
+          @auth
+
+          <form style ="padding:10px" method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                           <input class = "btn btn-success"type="submit" value ="logout">
+                        </form>
+
+          @else
+            <a href="{{url('/login')}}">
               <i class="fa fa-user" aria-hidden="true"></i>
               <span>
                 Login
               </span>
             </a>
+            <a href="{{url('/register')}}">
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <span>
+                Register
+              </span>
+            </a>
+          @endauth
+
+
+          @endif
+            
             <a href="">
               <i class="fa fa-shopping-bag" aria-hidden="true"></i>
             </a>
