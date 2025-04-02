@@ -38,7 +38,12 @@
 
           @auth
 
-          <form style ="padding:10px" method="POST" action="{{ route('logout') }}">
+          <a href="{{url('mycart')}}">
+              <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+              [{{$count}}]
+            </a>
+
+          <form style ="padding:15px" method="POST" action="{{ route('logout') }}">
                             @csrf
 
                            <input class = "btn btn-success"type="submit" value ="logout">
@@ -62,9 +67,7 @@
 
           @endif
             
-            <a href="">
-              <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-            </a>
+           
             <form class="form-inline ">
               <button class="btn nav_search-btn" type="submit">
                 <i class="fa fa-search" aria-hidden="true"></i>

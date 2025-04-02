@@ -22,3 +22,7 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 route::get('product_details/{id}',[HomeController::class,'product_details']);
+
+route::get('add_cart/{id}',[HomeController::class,'add_cart'])->middleware(['auth', 'verified']);
+
+route::get('mycart',[HomeController::class,'mycart'])->middleware(['auth', 'verified']);

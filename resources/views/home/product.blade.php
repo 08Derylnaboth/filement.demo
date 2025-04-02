@@ -12,7 +12,7 @@
           <div class="box">
            
               <div class="img-box">
-                <img src="{{$products->image}}" alt="">
+                <img width="150" height="150"src="/storage/{{$products->image}}" alt="">
               </div>
               <div class="detail-box">
                 <h6>
@@ -26,15 +26,18 @@
                 </h6>
               </div>
               
-           <div style="padding:10px"><a class ="btn btn-danger" href="{{url('product_details',$products->id)}}">Details</a>
+           <div style="padding:10px"><a class ="btn btn-danger" href="{{url('product_details',$products->id)}}">Details</a></div>
+           <a class ="btn btn-primary" href="{{url('add_cart',$products->id)}}">Add to Cart</a>
+           @endforeach
           </div>
 
-          @endforeach
+        
         </div>
-</div>
+      </div>
 
 
 
       
     </div>
-  </section>
+</br></br>
+</section>
