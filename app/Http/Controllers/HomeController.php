@@ -12,6 +12,10 @@ use App\Models\Cart;
 
 use Illuminate\Support\Facades\Auth;
 
+use App\Models\Order;
+
+//namespace App\Http\Controllers\Orders;
+
 class HomeController extends Controller
 {
     public function home(){
@@ -72,5 +76,37 @@ class HomeController extends Controller
                 $count="";
         }
         return view('home.mycart',compact('count','cart'));
+    }
+
+    public function confirm_order(Request $request){
+        $name=$request->name;
+        $address=$request->address;
+        $phone=$request->phone;
+        $userid=Auth::user()->id;
+        $cart=Cart::where('user_id',$userid)->get();
+
+        foreach($cart as $carts){
+            $order=new Order;
+            $order->product_id=$carts->product_id;
+            $order->name=$name;
+            $order->rec_address=$address;
+            $order->phone=$phone;
+            $order->user_id=$userid;
+            $order->save();
+        }
+        $cart_remove=Cart::where('user_id',$userid)->get();
+
+        foreach($cart_remove as $remove){
+            $data=Cart::find($remove->id);
+            $data->delete();
+        }
+        return redirect()->back();
+    }
+
+    public function myorders(){
+        $user=Auth::user()->id;
+        $count=Cart::where('user_id',$user)->get()->count();
+        $order=Order::where('user_id',$user)->get();
+        return view('home.order',compact('count','order'));
     }
 }

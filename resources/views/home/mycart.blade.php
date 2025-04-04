@@ -35,6 +35,20 @@
         margin-bottom:70px;
         padding:18px;
     }
+
+    .order_deg{
+      padding-right:100px;
+      margin-top:-50px;
+    }
+
+    label{
+      display:inline-block;
+      width:150px;
+    }
+
+    .div_gap{
+      padding:20px;
+    }
   </style>
 </head>
 
@@ -49,7 +63,20 @@
     <!-- end slider section -->
   </div>
   <!-- end hero area -->
-   <div class ="div_deg"><table>
+   <div class ="div_deg">
+    <div class="order_deg">
+      <form action="{{url('confirm_order')}}" method ="post">
+        @csrf
+        <div class="div_gap"><label>Receiver's Name</label>
+          <input type ="text" name ="name" value="{{Auth::user()->name}}"></div>
+          <div class="div_gap"><label>Receiver's Address</label>
+          <input type ="text" name ="address"></div>
+          <div class="div_gap"><label>Receiver's Phone</label>
+          <input type ="text" name ="phone"></div>
+          <div class="div_gap"><input type="submit" class="btn  btn-primary" value="Place Order"></div>
+      </form>
+    </div>
+    <table>
         <tr>
         <th>Product Title</th>
         <th>Price</th>
