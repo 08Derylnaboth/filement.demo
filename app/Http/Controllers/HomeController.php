@@ -109,4 +109,20 @@ class HomeController extends Controller
         $order=Order::where('user_id',$user)->get();
         return view('home.order',compact('count','order'));
     }
+
+    public function park(){
+        return view('home.park');
+    }
+
+    public function why(){
+        return view('home.why');
+    }
+
+    public function testimonial(){
+        return view('home.testimonial');      
+    }
+
+    public function contactus(){
+        return view('home.contactus');      
+    }
 }

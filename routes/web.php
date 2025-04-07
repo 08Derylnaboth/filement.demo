@@ -30,3 +30,11 @@ route::get('mycart',[HomeController::class,'mycart'])->middleware(['auth', 'veri
 route::post('confirm_order',[HomeController::class,'confirm_order'])->middleware(['auth', 'verified']);
 
 route::get('/myorders',[HomeController::class,'myorders'])->middleware(['auth', 'verified']);
+
+route::get('/park',[HomeController::class,'park']);
+
+route::get('why',[HomeController::class,'why']);
+
+route::get('testimonial',[HomeController::class,'testimonial']);
+
+route::get('contactus',[HomeController::class,'contactus']);

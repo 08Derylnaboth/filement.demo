@@ -14,6 +14,9 @@
     .detail-box{
         padding:15px;
     }
+    h1{
+      justify-content:center;
+    }
   </style>
 </head>
 
@@ -24,7 +27,21 @@
     <!-- end header section -->
     <!-- slider section -->
 
-    
+    <h1> start here</h1>
+    <style type="text/css">
+    .div_center{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding:30px;
+    }
+    .detail-box{
+        padding:15px;
+    }
+    h1{
+      justify-content:center;
+    }
+  </style>
 
     <!-- end slider section -->
   </div>
@@ -45,7 +62,7 @@
           <div class="box">
            
               <div class="div_center">
-                <img src="{{$data->image}}" alt="" width= "400">
+                <img src="/storage/{{$data->image}}" alt="" width= "400">
               </div>
               <div class="detail-box">
                 <h6>
@@ -58,7 +75,8 @@
                   </span>
                 </h6>
               </div>
-              
+             
+
           </div>
 
          

@@ -12,12 +12,12 @@
           <div class="box">
            
               <div class="img-box">
-                <img width="150" height="150"src="/storage/{{$products->image}}" alt="">
+                <img width="200" height="200"src="/storage/{{$products->image}}" alt="">
               </div>
               <div class="detail-box">
                 <h6>
                   {{$products->title}}
-                </h6>
+                </h6>                
                 <h6>
                   Price
                   <span>
