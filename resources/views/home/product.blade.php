@@ -17,18 +17,18 @@
               <div class="detail-box">
                 <h6>
                   {{$products->title}}
-                </h6>                
+                </h6>  <br/>              
                 <h6>
                   Price
                   <span>
                     ${{$products->price}}
                   </span>
                 </h6>
-              </div>
-              
+              </div>              
            <div style="padding:10px"><a class ="btn btn-danger" href="{{url('product_details',$products->id)}}">Details</a></div>
-           <a class ="btn btn-primary" href="{{url('add_cart',$products->id)}}">Add to Cart</a>
+           <a  class ="btn btn-primary" href="{{url('add_cart',$products->id)}}">Reserve</a>
            @endforeach
+
           </div>
 
         
